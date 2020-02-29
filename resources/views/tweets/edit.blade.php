@@ -4,17 +4,8 @@
 Edit Tweet
 @endsection
 @section('content')
-<h1>Edit Tweet</h1>
 <p>Use this for to edit your tweet.</p>
-<div role="alert">
-  @if ($errors->any())
-  <ul>
-    @foreach ($errors->all() as $error)
-      <li>{{$error}}</li>
-    @endforeach
-  </ul>
-  @endif
-</div>
+@include('partials.errors')
 <form method="post" action="{{route('tweets.update', $tweet->id)}}">
   @csrf
   {{-- ^^Cross-site request forgery protection --}}

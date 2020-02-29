@@ -3,19 +3,9 @@
 @section('title')
 Create Tweet Form
 @endsection
-
 @section('content')
-<h1>Create Tweet Form</h1>
 <p>Fill out this form to create a tweet</p>
-<div role="alert">
-  @if ($errors->any())
-  <ul>
-    @foreach ($errors->all() as $error)
-      <li>{{$error}}</li>
-    @endforeach
-  </ul>
-  @endif
-</div>
+@include('partials.errors')
 <form method="post" action="{{route('tweets.store')}}">
   @csrf
   {{-- ^^Cross-site request forgery protection --}}

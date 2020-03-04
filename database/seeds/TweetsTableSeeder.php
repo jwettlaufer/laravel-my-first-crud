@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory; // Don't forget to pull in Faker.
 
 class TweetsTableSeeder extends Seeder
 {
@@ -34,12 +33,15 @@ class TweetsTableSeeder extends Seeder
 
         //Let's try faker to prepopulate with lots of imaginary data quickly!
 
-        $faker = Faker::create();
+        $faker = Faker\Factory::create();
+
+        foreach(range(1, 25) as $index){
         DB::table('tweets')->insert(array(
 
           'author'=>$faker->name,
           'message'=>$faker->catchphrase
         ));
+      }
 
     }
 }

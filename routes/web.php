@@ -20,3 +20,5 @@ Route::resource('tweets', 'TweetController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/teams', 'TeamsController@index')->name('teams')->middleware('check.age');

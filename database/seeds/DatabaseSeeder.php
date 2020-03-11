@@ -12,6 +12,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->call((new TweetsTableSeeder)->run());
+        (new TweetsTableSeeder)->run();
+
+        (new UsersTableSeeder)->run();
+
+        (new TeamsTableSeeder)->run();
     }
 }

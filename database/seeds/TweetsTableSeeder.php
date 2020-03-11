@@ -13,21 +13,22 @@ class TweetsTableSeeder extends Seeder
      */
     public function run()
     {
+/*
         //First Tweet
         DB::table('tweets')->insert(array(
-          'author' => 'Bob',
+          'user_id' => rand(2,6),
           'message' => 'My first tweet!'
         ));
 
         //Second Tweet
         DB::table('tweets')->insert(array(
-          'author' => 'Sarah',
+          'user_id' => rand(2,6),
           'message' => 'Hello, world!'
         ));
 
         //Third Tweet
         DB::table('tweets')->insert(array(
-          'author' => 'Sam',
+          'user_id' => rand(2,6),
           'message' => 'Yo! Sup?'
         ));
 
@@ -42,6 +43,6 @@ class TweetsTableSeeder extends Seeder
           'message'=>$faker->catchphrase
         ));
       }
-
+*/
     }
 }

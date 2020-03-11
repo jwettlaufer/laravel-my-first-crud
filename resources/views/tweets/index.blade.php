@@ -13,11 +13,17 @@ Tweets Index
 <ul>
   @foreach($tweets as $tweet)
   <li>
-      <h2>{{$tweet->author}}</h2>
+      <h2>{{$tweet->name}}</h2>
       <p>
         {{$tweet->message}}
       </p>
       <ul>
+        <li>
+            <a href="{{route('tweets.show', $tweet->id)}}">
+              View
+            </a>
+        </li>
+        @auth
         <li>
             <a href="{{route('tweets.edit', $tweet->id)}}">
               Edit Tweet
@@ -30,6 +36,7 @@ Tweets Index
                 <input type="submit" value="Delete Tweet">
             </form>
         </li>
+        @endauth
       </ul>
   </li>
   @endforeach
